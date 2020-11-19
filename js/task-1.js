@@ -1,49 +1,22 @@
-// Задача 6-1
-// map
-// Получи массив имен всех пользователей (свойство name) используя деструктурирующее присваивание 
-// для параметра функции({ name }) без пробелов и переносов на новую строку.
+// Задание 1
+// В HTML есть список категорий ul#categories.
 
-// Используй только перебирающие методы массива которые не изменяют (не мутируют) исходный массив. 
-// Т.е.нельзя использовать for, splice, push и т.п.мутирующие методы.
+// Напиши скрипт, который выполнит следующие операции.
 
-// Деструктурирующее присваивание для параметра функции
-// PS Деструктурирующее присваивание (ДП):
+// Посчитает и выведет в консоль количество категорий в ul#categories, то есть элементов li.item. Получится 'В списке 3 категории.'.
 
-// Объект как параметр без ДП
-// const object = {num : 2}
-// function getNum (obj) { return obj.num; }
-// console.log(getNum(object)) // 2
-// ДП
-// const object = {num : 2}
-// // const num  =  object.num;
-// const { num } = object;
-// console.log(num) // 2
-// Объект как параметр c ДП
-// const object = {num : 2}
-// //function getNum (obj) { return obj.num; }
-// function getNum ({num}) { return num; }
-// console.log(getNum(object)) // 2
+// Для каждого элемента li.item в списке ul#categories, найдет и выведет в консоль текст заголовка элемента (тега h2) и количество 
+// элементов в категории(всех вложенных в него элементов li).
+// Например для первой категории получится:
+// Категория: Животные
+// Количество элементов: 4
 
-// Write code under this line
-const object = { name : "" };
-function getNames({ name }) {
-  return name;
-}
+const li = document.querySelectorAll('li.item');
+    
+console.log(`В списке ${li.length} категории.`);
+// ===================================
 
-const getUserNames = (users) => {
-    return users.map(({name}) => name);
-};
-
-
-console.log(getUserNames(users));
-
-
-/* [
-  "Moore Hensley",
-  "Sharlene Bush",
-  "Ross Vazquez",
-  "Elma Head",
-  "Carey Barr",
-  "Blackburn Dotson",
-  "Sheree Anthony",
-] */
+li.forEach(function (categoryItem) {
+  console.log(`Категория: ${categoryItem.querySelector('h2').textContent}`);
+  console.log(`Количество элементов: ${categoryItem.querySelectorAll('li').length}`)
+})
