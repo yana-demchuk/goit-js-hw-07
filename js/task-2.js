@@ -34,6 +34,24 @@ for (let i = 0; i < ingredients.length; i += 1) {
 }
 
 
+// ===============  Пример решения от Марвела ====================
+
+// let ingrList = ingredients.map((value) =>
+//   {
+//     let item = document.createElement('li');
+//     item.textContent = value;
+//     return item;
+//   });
+// const getNodeListToString = function (nodesList) {
+//   return nodesList.map(element => element.outerHTML).join('');
+// }    
+// document.querySelector("#ingredients").insertAdjacentHTML('afterbegin',getNodeListToString(ingrList));
+
+
+
+
+
+
 
 // const listRef = document.querySelector('#ingredients');
 // const liRef = document.createElement('li');
