@@ -28,21 +28,43 @@ const images = [
   },
 ];
 
-images.forEach(image => {
-    const itemList = document.createElement('li');
-    console.log(itemList);
-    const itemImage = document.createElement('img');
-    // itemImage.insertAdjacentHTML('afterbegin', '');
-    itemList.appendChild(itemImage);
-    itemImage.src = image.url;
-    itemImage.alt = image.alt;
-    const listImages = document.querySelector('#gallery');
-    listImages.append(itemList);
 
-    listImages.style.display = 'flex';
-    listImages.style.justifyContent = 'space-between';
-    itemImage.style.height = '200px';
-    itemList.style.marginRight = '20px';
-    itemList.style.listStyle = 'none';
-});
+for (let i = 0; i < images.length; i += 1) {
+  const liRef = document.createElement('li');
+  const imgRef = document.createElement('img');
+  liRef.appendChild(imgRef);
+  const listRef = document.querySelector('#gallery');
+  
+  imgRef.src = images[i].url;
+  imgRef.alt = images[i].alt;
+
+  listRef.style.display = 'flex';
+  listRef.style.justifyContent = 'space-between';
+  imgRef.style.height = '200px';
+  liRef.style.marginRight = '20px';
+  liRef.style.listStyle = 'none';
+
+  listRef.insertAdjacentElement("beforeend", liRef);
+
+  console.log(liRef);
+}
+
+
+
+// images.forEach(image => {
+//     const itemList = document.createElement('li');
+//     console.log(itemList);
+//     const itemImage = document.createElement('img');
+//     itemList.appendChild(itemImage);
+//     itemImage.src = image.url;
+//     itemImage.alt = image.alt;
+//     const listImages = document.querySelector('#gallery');
+//     listImages.append(itemList);
+
+//     listImages.style.display = 'flex';
+//     listImages.style.justifyContent = 'space-between';
+//     itemImage.style.height = '200px';
+//     itemList.style.marginRight = '20px';
+//     itemList.style.listStyle = 'none';
+// });
 

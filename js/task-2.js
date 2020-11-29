@@ -25,10 +25,48 @@ const ingredients = [
 ];
 
 
-ingredients.forEach(item => {
-  const itemIngredients = document.createElement('li');
-  console.log(itemIngredients);
-  itemIngredients.textContent = item;
-  const listIngredients = document.querySelector('#ingredients');
-  listIngredients.append(itemIngredients);
-})
+for (let i = 0; i < ingredients.length; i += 1) {
+  const liRef = document.createElement('li');
+  liRef.textContent = `${ingredients[i]}`;
+  const listRef = document.querySelector('#ingredients');
+  listRef.appendChild(liRef);
+  console.log(liRef);
+}
+
+
+
+// const listRef = document.querySelector('#ingredients');
+// const liRef = document.createElement('li');
+// listRef.appendChild(liRef);
+
+// function getListMarkup(arr) {
+//   liRef.textContent = `${arr}`;
+//   return liRef;
+// }
+
+// getListMarkup(ingredients);
+
+// console.log(listRef);
+
+
+
+
+// function getListMarkup(arr) {
+//   const items = `${arr.map(ing => `<li>${ing}</li>`).join('')}`; 
+//   return items;
+// }
+
+// listRef.append(getListMarkup(ingredients));
+
+// console.log(listRef);
+
+
+
+
+// ingredients.forEach(item => {
+//   const itemIngredients = document.createElement('li');
+//   itemIngredients.textContent = item;
+//   const listIngredients = document.querySelector('#ingredients');
+//   listIngredients.append(itemIngredients);
+//   console.log(itemIngredients);
+// })

@@ -18,12 +18,12 @@
 // }
 
 const inputRef = document.querySelector('#validation-input');
-console.log(inputRef.dataset.length)
+console.log(inputRef.dataset.length);
 
 inputRef.addEventListener('change', event => {
     console.log(event.target.value.length);
     if (event.target.value.length === Number(inputRef.dataset.length)) {
-        
+        inputRef.classList.remove('invalid');
         inputRef.classList.add('valid');
         console.log(inputRef)
     } else {
