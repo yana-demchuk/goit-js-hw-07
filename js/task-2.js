@@ -12,7 +12,8 @@
 //   'Зелень',
 //   'Приправы',
 // ];
-// Напиши скрипт, который для каждого элемента массива ingredients создаст отдельный li, после чего вставит все li за одну операцию в список ul.ingredients. Для создания DOM-узлов используй document.createElement().
+// Напиши скрипт, который для каждого элемента массива ingredients создаст отдельный li, после чего вставит все li за одну операцию в 
+// список ul.ingredients.Для создания DOM - узлов используй document.createElement().
 
 
 const ingredients = [
@@ -25,31 +26,26 @@ const ingredients = [
 ];
 
 
-for (let i = 0; i < ingredients.length; i += 1) {
-  const liRef = document.createElement('li');
-  liRef.textContent = `${ingredients[i]}`;
-  const listRef = document.querySelector('#ingredients');
-  listRef.appendChild(liRef);
-  console.log(liRef);
-}
+let ingrList = ingredients.map((value) =>
+  { let item = document.createElement('li');
+    item.textContent = value;
+    return item;
+  });
+document.querySelector("#ingredients").append(...ingrList);
+
+console.log(ingrList);
 
 
-// ===============  Пример решения от Марвела ====================
-
-// let ingrList = ingredients.map((value) =>
-//   {
-//     let item = document.createElement('li');
-//     item.textContent = value;
-//     return item;
-//   });
-// const getNodeListToString = function (nodesList) {
-//   return nodesList.map(element => element.outerHTML).join('');
-// }    
-// document.querySelector("#ingredients").insertAdjacentHTML('afterbegin',getNodeListToString(ingrList));
+// for (let i = 0; i < ingredients.length; i += 1) {
+//   const liRef = document.createElement('li');
+//   liRef.textContent = `${ingredients[i]}`;
+//   const listRef = document.querySelector('#ingredients');
+//   listRef.appendChild(liRef);
+//   console.log(liRef);
+// }
 
 
-
-
+// ===================================
 
 
 

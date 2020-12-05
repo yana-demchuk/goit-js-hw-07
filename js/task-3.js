@@ -28,26 +28,40 @@ const images = [
   },
 ];
 
+const gallery = document.querySelector("#gallery");
 
-for (let i = 0; i < images.length; i += 1) {
-  const liRef = document.createElement('li');
-  const imgRef = document.createElement('img');
-  liRef.appendChild(imgRef);
-  const listRef = document.querySelector('#gallery');
+gallery.insertAdjacentHTML("afterbegin", images.map(({ url, alt }) =>
+  `<li><img height="200" src="${url}" alt="${alt}"></li>`).join(''));
+gallery.classList.add("gallery");
+
+gallery.style.display = 'flex';
+gallery.style.justifyContent = 'space-between';
+gallery.style.marginRight = '20px';
+gallery.style.listStyle = 'none';
+
+
+
+
+
+// for (let i = 0; i < images.length; i += 1) {
+//   const liRef = document.createElement('li');
+//   const imgRef = document.createElement('img');
+//   liRef.appendChild(imgRef);
+//   const listRef = document.querySelector('#gallery');
   
-  imgRef.src = images[i].url;
-  imgRef.alt = images[i].alt;
+//   imgRef.src = images[i].url;
+//   imgRef.alt = images[i].alt;
 
-  listRef.style.display = 'flex';
-  listRef.style.justifyContent = 'space-between';
-  imgRef.style.height = '200px';
-  liRef.style.marginRight = '20px';
-  liRef.style.listStyle = 'none';
+//   listRef.style.display = 'flex';
+//   listRef.style.justifyContent = 'space-between';
+//   imgRef.style.height = '200px';
+//   liRef.style.marginRight = '20px';
+//   liRef.style.listStyle = 'none';
 
-  listRef.insertAdjacentElement("beforeend", liRef);
+//   listRef.insertAdjacentElement("beforeend", liRef);
 
-  console.log(liRef);
-}
+//   console.log(liRef);
+// }
 
 
 
